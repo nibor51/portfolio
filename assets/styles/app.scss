@@ -15,3 +15,26 @@ body {
     color: $black;
     background-color: $primary-color;
 }
+
+.navbar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $secondary-color;
+    height: 4rem;
+
+    ul {
+        display: inherit;
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin-left: 2rem;
+
+            a {
+                color: $black;
+                text-decoration: none;
+            }
+        }
+    }
+}

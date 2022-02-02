@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent() }} - Works{% endblock %}
+
+{% block body %}
+<h1>Work index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>StartDate</th>
+            <th>EndDate</th>
+            <th>Link</th>
+            <th>actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for work in works %}
+        <tr>
+            <td>{{ work.id }}</td>
+            <td>{{ work.title }}</td>
+            <td>{{ work.description }}</td>
+            <td>{{ work.startDate ? work.startDate|date('Y-m-d') : '' }}</td>
+            <td>{{ work.endDate ? work.endDate|date('Y-m-d') : '' }}</td>
+            <td>{{ work.link }}</td>
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="7">no records found</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
