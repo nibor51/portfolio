@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tech index{% endblock %}
+
+{% block body %}
+    <h1>Tech index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Logo</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tech in teches %}
+            <tr>
+                <td>{{ tech.id }}</td>
+                <td>{{ tech.name }}</td>
+                <td>{{ tech.logo }}</td>
+                <td>
+                    <a href="{{ path('tech_show', {'id': tech.id}) }}">show</a>
+                    <a href="{{ path('tech_edit', {'id': tech.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('tech_new') }}">Create new</a>
+{% endblock %}
