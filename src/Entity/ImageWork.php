@@ -19,6 +19,10 @@ class ImageWork
     #[ORM\Column(type: 'string', length: 255)]
     private $src;
 
+    #[ORM\ManyToOne(targetEntity: Work::class, inversedBy: 'images')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $work;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -44,6 +48,18 @@ class ImageWork
     public function setSrc(string $src): self
     {
         $this->src = $src;
+
+        return $this;
+    }
+
+    public function getWork(): ?Work
+    {
+        return $this->work;
+    }
+
+    public function setWork(?Work $work): self
+    {
+        $this->work = $work;
 
         return $this;
     }

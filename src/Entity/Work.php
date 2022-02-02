@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\WorkRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: WorkRepository::class)]
@@ -27,6 +29,18 @@ class Work
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $link;
+
+    #[ORM\ManyToMany(targetEntity: Tech::class)]
+    private $usedTech;
+
+    #[ORM\OneToMany(mappedBy: 'work', targetEntity: ImageWork::class, orphanRemoval: true)]
+    private $images;
+
+    public function __construct()
+    {
+        $this->usedTech = new ArrayCollection();
+        $this->images = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -89,6 +103,60 @@ class Work
     public function setLink(?string $link): self
     {
         $this->link = $link;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Tech[]
+     */
+    public function getUsedTech(): Collection
+    {
+        return $this->usedTech;
+    }
+
+    public function addUsedTech(Tech $usedTech): self
+    {
+        if (!$this->usedTech->contains($usedTech)) {
+            $this->usedTech[] = $usedTech;
+        }
+
+        return $this;
+    }
+
+    public function removeUsedTech(Tech $usedTech): self
+    {
+        $this->usedTech->removeElement($usedTech);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ImageWork[]
+     */
+    public function getImages(): Collection
+    {
+        return $this->images;
+    }
+
+    public function addImage(ImageWork $image): self
+    {
+        if (!$this->images->contains($image)) {
+            $this->images[] = $image;
+            $image->setWork($this);
+        }
+
+        return $this;
+    }
+
+    public function removeImage(ImageWork $image): self
+    {
+        if ($this->images->removeElement($image)) {
+            // set the owning side to null (unless already changed)
+            if ($image->getWork() === $this) {
+                $image->setWork(null);
+            }
+        }
 
         return $this;
     }
