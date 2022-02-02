@@ -14,7 +14,11 @@
         {% endblock %}
     </head>
     <body>
-        {% include "components/_navbar.html.twig" %}
+        {% if app.user %}
+            {% include "components/_adminNavbar.html.twig" %}
+        {% else %}
+            {% include "components/_navbar.html.twig" %}
+        {% endif %}
         {% block body %}{% endblock %}
     </body>
 </html>
