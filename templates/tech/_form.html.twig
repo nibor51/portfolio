@@ -1,4 +1,22 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+<div class="form-container">
+    {{ form_start(form, {
+        attr: {id: 'work_form'}
+    }) }}
+        <div>
+            {{ form_widget(form.name, {
+                    attr: {placeholder: 'Nom'}
+            }) }}
+        </div>
+        <div>
+            {{ form_widget(form.logo, {
+                    attr: {placeholder: 'lien vers image logo'}
+            }) }}
+        </div>
+    {{ form_end(form) }}
+</div>
+<div class="button-bar">
+    {% if showDeleteForm %}
+    {{ include('tech/_delete_form.html.twig') }}
+    {% endif %}
+    <button type="submit" form="tech_form" class="button">{{ button_label|default('Sauvegarder') }}</button>
+</div>

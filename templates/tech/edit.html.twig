@@ -3,11 +3,7 @@
 {% block title %}Edit Tech{% endblock %}
 
 {% block body %}
-    <h1>Edit Tech</h1>
-
-    {{ include('tech/_form.html.twig', {'button_label': 'Update'}) }}
-
     <a href="{{ path('tech_index') }}">back to list</a>
-
-    {{ include('tech/_delete_form.html.twig') }}
+    <div class="text-align-center"><h1 class="title">Edit Tech</h1></div>
+    {{ include('tech/_form.html.twig', {'button_label': 'Modifier', 'showDeleteForm': true}) }}
 {% endblock %}
