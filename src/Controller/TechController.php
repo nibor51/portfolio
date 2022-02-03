@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/tech')]
+#[Route('/admin/tech')]
 class TechController extends AbstractController
 {
     #[Route('/', name: 'tech_index', methods: ['GET'])]

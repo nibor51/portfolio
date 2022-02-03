@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ parent() }} - Admin Panel{% endblock %}
+{% block title %}{{ parent() }} - Admin Login{% endblock %}
 
 {% block body %}
     {% if error %}
@@ -17,7 +17,7 @@
         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
 
         {# If you want to control the URL the user is redirected to on success #}
-        <input type="hidden" name="_target_path" value="/admin"/>
+        <input type="hidden" name="_target_path" value="{{ path('work_index') }}"/>
 
         <button type="submit">Login</button>
     </form>
