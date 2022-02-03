@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/work')]
+#[Route('/admin/work')]
 class WorkController extends AbstractController
 {
     #[Route('/', name: 'work_index', methods: ['GET'])]

@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/image/work')]
+#[Route('/admin/image/work')]
 class ImageWorkController extends AbstractController
 {
     #[Route('/', name: 'image_work_index', methods: ['GET'])]
