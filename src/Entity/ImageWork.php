@@ -20,7 +20,6 @@ class ImageWork
     private $src;
 
     #[ORM\ManyToOne(targetEntity: Work::class, inversedBy: 'images')]
-    #[ORM\JoinColumn(nullable: false)]
     private $work;
 
     public function getId(): ?int
@@ -63,4 +62,5 @@ class ImageWork
 
         return $this;
     }
+
 }
