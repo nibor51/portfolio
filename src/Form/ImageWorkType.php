@@ -3,7 +3,9 @@
 namespace App\Form;
 
 use App\Entity\ImageWork;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -12,9 +14,12 @@ class ImageWorkType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('alt')
-            ->add('src')
-            ->add('work')
+            ->add('alt', TextType::class)
+            ->add('src', TextType::class)
+            ->add('work', EntityType::class, [
+                'class' => 'App\Entity\Work',
+                'choice_label' => 'title',
+            ])
         ;
     }
 
