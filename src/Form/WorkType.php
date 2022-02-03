@@ -3,7 +3,11 @@
 namespace App\Form;
 
 use App\Entity\Work;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -12,12 +16,24 @@ class WorkType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('title')
-            ->add('description')
-            ->add('startDate')
-            ->add('endDate')
-            ->add('link')
-            ->add('usedTech')
+            ->add('title', TextType::class)
+            ->add('description', TextareaType::class)
+            ->add('startDate', DateType::class, [
+                'widget' => 'single_text',
+                'format' => 'yyyy-MM-dd',
+            ])
+            ->add('endDate', DateType::class, [
+                'widget' => 'single_text',
+                'format' => 'yyyy-MM-dd',
+                'disabled' => true,
+            ])
+            ->add('link', TextType::class)
+            ->add('usedTech', EntityType::class, [
+                'class' => 'App\Entity\Tech',
+                'choice_label' => 'name',
+                'multiple' => true,
+                'expanded' => true,
+            ])
         ;
     }
 
