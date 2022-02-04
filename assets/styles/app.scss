@@ -14,10 +14,47 @@ body {
     line-height: $line-height;
     color: $black;
     background-color: $primary-color;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .text-align-center {
     text-align: center;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about {
+    flex-grow: 1;
+}
+
+.element {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 60vh;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    margin: 1rem;
+    padding: 1rem;
+    
+    p {
+        width: 50vw;
+        padding: .5rem;
+    }
+
+    img {
+        width: 30vw;
+        height: 50vh;
+        margin: 1rem;
+    }
+
 }
 
 .navbar-container {
@@ -60,7 +97,6 @@ body {
             margin-bottom: 1rem;
             text-align: center;
         }
-        
 
     }
 }
