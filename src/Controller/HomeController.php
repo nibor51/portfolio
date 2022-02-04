@@ -9,6 +9,14 @@ use App\Repository\WorkRepository;
 
 class HomeController extends AbstractController
 {
+    #[Route('/test', name: 'test')]
+    public function test(WorkRepository $work): Response
+    {
+        return $this->render('home/test.html.twig', [
+            'works' => $work->findAll(),
+        ]);
+    }
+
     #[Route('/', name: 'home')]
     public function index(): Response
     {
