@@ -1,4 +1,36 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+<div class="form-container">
+    {{ form_start(form, {
+        attr: {id: 'work_form'}
+    }) }}
+        <div>
+            {{ form_widget(form.title, {
+                    attr: {placeholder: 'Titre'}
+            }) }}
+        </div>
+        <div>
+            {{ form_widget(form.description, {
+                    attr: {placeholder: 'Description'}
+            }) }}
+        </div>
+        <div>
+            {{ form_widget(form.startDate) }}
+        </div>
+        <div>
+            {{ form_widget(form.endDate) }}
+        </div>
+        <div>
+            {{ form_widget(form.link, {
+                    attr: {placeholder: 'Lien du projet'}
+            }) }}
+        </div>
+        <div>
+            {{ form_widget(form.usedTech) }}
+        </div>
+    {{ form_end(form) }}
+</div>
+<div class="button-bar">
+    {% if showDeleteForm %}
+    {{ include('work/_delete_form.html.twig') }}
+    {% endif %}
+    <button type="submit" form="work_form" class="button">{{ button_label|default('Sauvegarder') }}</button>
+</div>

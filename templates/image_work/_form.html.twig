@@ -1,4 +1,25 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+<div class="form-container">
+    {{ form_start(form, {
+        attr: {id: 'image_work_form'}
+    }) }}
+        <div>
+            {{ form_widget(form.alt, {
+                    attr: {placeholder: 'Titre'}
+            }) }}
+        </div>
+        <div>
+            {{ form_widget(form.src, {
+                    attr: {placeholder: 'lien vers l\'image'}
+            }) }}
+        </div>
+        <div>
+            {{ form_widget(form.work) }}
+        </div>
+    {{ form_end(form) }}
+</div>
+<div class="button-bar">
+    {% if showDeleteForm %}
+    {{ include('image_work/_delete_form.html.twig') }}
+    {% endif %}
+    <button type="submit" form="image_work_form" class="button">{{ button_label|default('Sauvegarder') }}</button>
+</div>

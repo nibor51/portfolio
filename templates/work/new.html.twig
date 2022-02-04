@@ -3,9 +3,7 @@
 {% block title %}New Work{% endblock %}
 
 {% block body %}
-    <h1>Create new Work</h1>
-
-    {{ include('work/_form.html.twig') }}
-
     <a href="{{ path('work_index') }}">back to list</a>
+    <div class="text-align-center"><h1 class="title">Create new Work</h1></div>
+    {{ include('work/_form.html.twig', {'showDeleteForm': false}) }}
 {% endblock %}

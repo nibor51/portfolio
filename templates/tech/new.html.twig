@@ -3,9 +3,7 @@
 {% block title %}New Tech{% endblock %}
 
 {% block body %}
-    <h1>Create new Tech</h1>
-
-    {{ include('tech/_form.html.twig') }}
-
     <a href="{{ path('tech_index') }}">back to list</a>
+    <div class="text-align-center"><h1 class="title">Create new Tech</h1></div>
+    {{ include('tech/_form.html.twig', {'showDeleteForm': false}) }}
 {% endblock %}

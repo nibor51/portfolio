@@ -2,36 +2,46 @@
 
 {% block title %} {{ parent() }} - Works{% endblock %}
 
-{% block body %}
-<h1>Work index</h1>
+{# TODO : 
+    x-overflow for display works or JS
+    fix size box 'element' for grow-fit-content
+    fixture work, work with real img #}
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>StartDate</th>
-            <th>EndDate</th>
-            <th>Link</th>
-            <th>actions</th>
-        </tr>
-    </thead>
-    <tbody>
-    {% for work in works %}
-        <tr>
-            <td>{{ work.id }}</td>
-            <td>{{ work.title }}</td>
-            <td>{{ work.description }}</td>
-            <td>{{ work.startDate ? work.startDate|date('Y-m-d') : '' }}</td>
-            <td>{{ work.endDate ? work.endDate|date('Y-m-d') : '' }}</td>
-            <td>{{ work.link }}</td>
-        </tr>
-    {% else %}
-        <tr>
-            <td colspan="7">no records found</td>
-        </tr>
-    {% endfor %}
-    </tbody>
-</table>
+{% block body %}
+    <h1 class="title" hidden>Work</h1>
+    <div class="flex container works">
+        {% for work in works %}
+            <div class="flex work-container">
+                <div class="element">
+                    <h2>{{ work.title }}</h2>
+                    <p>Du {{ work.startDate ? work.startDate|date('Y-m-d') : '' }} au {{ work.endDate ? work.endDate|date('Y-m-d') : '' }}</p>
+                    <p></p>
+                    <p>
+                        {{ work.description }}
+                    </p>
+                    <p>{{ work.link }}</p>
+                    <div class="tech-container">
+                        <h3>Techs Utilisées</h3>
+                        {% for tech in work.usedTech %}
+                            <img src="{{ tech.logo }}" alt="{{ tech.name }}" width="50px" height="50px">
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="element">
+                    {% for image in work.images %}
+                        <img src="{{ image.src }}" alt="{{ image.alt }}">
+                    {% endfor %}
+                </div>
+            </div>
+        {% else %}
+            <div class="flex container">
+                <div class="element">
+                    <p>
+                        no records found
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
 {% endblock %}
