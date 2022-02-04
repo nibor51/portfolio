@@ -9,7 +9,7 @@ use App\Repository\WorkRepository;
 
 class HomeController extends AbstractController
 {
-    #[Route('/home', name: 'home')]
+    #[Route('/', name: 'home')]
     public function index(): Response
     {
         return $this->render('home/index.html.twig');
