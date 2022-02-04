@@ -3,35 +3,35 @@
 {% block title %} {{ parent() }} - Works{% endblock %}
 
 {% block body %}
-<h1>Work index</h1>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>StartDate</th>
-            <th>EndDate</th>
-            <th>Link</th>
-            <th>actions</th>
-        </tr>
-    </thead>
-    <tbody>
+    <h1 class="title">Work</h1>
     {% for work in works %}
-        <tr>
-            <td>{{ work.id }}</td>
-            <td>{{ work.title }}</td>
-            <td>{{ work.description }}</td>
-            <td>{{ work.startDate ? work.startDate|date('Y-m-d') : '' }}</td>
-            <td>{{ work.endDate ? work.endDate|date('Y-m-d') : '' }}</td>
-            <td>{{ work.link }}</td>
-        </tr>
+        <div class="flex container">
+            <div class="element">
+                <h2>{{ work.title }}</h2>
+                <p>Du {{ work.startDate ? work.startDate|date('Y-m-d') : '' }} au {{ work.endDate ? work.endDate|date('Y-m-d') : '' }}</p>
+                <p></p>
+                <p>
+                    {{ work.description }}
+                </p>
+                <p>{{ work.link }}</p>
+                <h3>Techs Utilisées</h3>
+                <div class="tech-container">
+                {% for tech in work.usedTech %}
+                    <img src="{{ tech.logo }}" alt="{{ tech.name }}">
+                {% endfor %}
+                </div>
+            </div>
+            <div class="element">
+                {% for image in work.images %}
+                <img src="{{ image.src }}" alt="{{ image.alt }}">
+            {% endfor %}
+            </div>
     {% else %}
-        <tr>
-            <td colspan="7">no records found</td>
-        </tr>
+            <div class="element">
+                <p>
+                    no records found
+                </p>
+            </div>
+        </div>
     {% endfor %}
-    </tbody>
-</table>
 {% endblock %}

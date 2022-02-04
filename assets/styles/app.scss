@@ -31,6 +31,7 @@ body {
 
 .container {
     flex-grow: 1;
+    margin: 1.5rem;
 }
 
 .element {
@@ -45,7 +46,6 @@ body {
     padding: 1rem;
     
     p {
-        width: 50vw;
         padding: .5rem;
     }
 
