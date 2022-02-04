@@ -11,83 +11,63 @@ class TechFixtures extends Fixture
     public const TECH_DATAS = [
         [
             'name' => 'PHP',
-            'logo' => 'php.png',
+            'logo' => 'https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/php/php-original.svg',
         ],
         [
             'name' => 'Symfony',
-            'logo' => 'symfony.png',
+            'logo' => 'https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/symfony/symfony-original.svg',
         ],
         [
             'name' => 'JavaScript',
-            'logo' => 'javascript.png',
+            'logo' => 'https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/javascript/javascript-original.svg',
         ],
         [
             'name' => 'React',
-            'logo' => 'react.png',
-        ],
-        [
-            'name' => 'Vue',
-            'logo' => 'vue.png',
-        ],
-        [
-            'name' => 'Angular',
-            'logo' => 'angular.png',
+            'logo' => 'https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/react/react-original-wordmark.svg',
         ],
         [
             'name' => 'Node.js',
-            'logo' => 'nodejs.png',
+            'logo' => 'https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/nodejs/nodejs-original-wordmark.svg',
         ],
         [
             'name' => 'SASS',
-            'logo' => 'sass.png',
+            'logo' => 'https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/sass/sass-original.svg',
         ],
         [
             'name' => 'Git',
-            'logo' => 'git.png',
+            'logo' => 'https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/git/git-original-wordmark.svg',
         ],
         [
             'name' => 'GitHub',
-            'logo' => 'github.png',
-        ],
-        [
-            'name' => 'GitKraken',
-            'logo' => 'gitkraken.png',
+            'logo' => 'https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/github/github-original-wordmark.svg',
         ],
         [
             'name' => 'TypeScript',
-            'logo' => 'typescript.png',
+            'logo' => 'https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/typescript/typescript-original.svg',
         ],
         [
             'name' => 'Docker',
-            'logo' => 'docker.png',
+            'logo' => 'https://github.com/devicons/devicon/blob/master/icons/docker/docker-original-wordmark.svg',
         ],
         [
             'name' => 'Linux',
-            'logo' => 'linux.png',
-        ],
-        [
-            'name' => 'Windows',
-            'logo' => 'windows.png',
+            'logo' => 'https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/linux/linux-original.svg',
         ],
         [
             'name' => 'Yarn',
-            'logo' => 'yarn.png',
+            'logo' => 'https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/yarn/yarn-original-wordmark.svg',
         ],
         [
             'name' => 'Express.js',
-            'logo' => 'expressjs.png',
+            'logo' => 'https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/express/express-original-wordmark.svg',
         ],
         [
             'name' => 'MongoDB',
-            'logo' => 'mongodb.png',
+            'logo' => 'https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/mongodb/mongodb-original-wordmark.svg',
         ],
         [
             'name' => 'MySQL',
-            'logo' => 'mysql.png',
-        ],
-        [
-            'name' => 'PostgreSQL',
-            'logo' => 'postgresql.png',
+            'logo' => 'https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/mysql/mysql-original-wordmark.svg',
         ],
     ];
 
