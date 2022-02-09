@@ -47,7 +47,7 @@ class TechFixtures extends Fixture
         ],
         [
             'name' => 'Docker',
-            'logo' => 'https://github.com/devicons/devicon/blob/master/icons/docker/docker-original-wordmark.svg',
+            'logo' => 'https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/docker/docker-original-wordmark.svg',
         ],
         [
             'name' => 'Linux',

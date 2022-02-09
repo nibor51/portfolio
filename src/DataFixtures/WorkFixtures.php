@@ -9,31 +9,44 @@ use Doctrine\Persistence\ObjectManager;
 
 class WorkFixtures extends Fixture implements DependentFixtureInterface
 {
+    // TODO : 
+    // Make real date for each work 
+    // Add more details for each work description
+    // Change link for Reims Quizz
+    // Add more works (hackathon, ...)
     public const WORK_DATAS = [
         [
-            'title' => 'Project un',
-            'description' => ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eget scelerisque purus. Fusce non arcu pharetra sem euismod elementum eu ut eros. Nulla neque eros, pulvinar et vulputate et, pellentesque eu ipsum. Sed erat lorem, viverra et aliquam nec, malesuada ut urna. Vivamus porta urna vitae massa maximus scelerisque quis sit amet nisl. Maecenas id tempor ante, eu scelerisque erat. Sed cursus massa quis ex maximus, non feugiat diam commodo. Curabitur vitae nisl accumsan, ornare velit vel, interdum erat.
+            'title' => 'Reims Quizz',
+            'description' => 'On the occasion of our first project at the Wild Code School, we have the task of creating a web application that we have named Reims Quiz and which, as its name indicates, is a quiz designed to help tourists discover the city of Reims.
+            
+            The application is composed of a front-end and is made with HTML, CSS and JavaScript.
 
-            Integer vitae eleifend libero. Morbi ac sapien eu nunc gravida hendrerit id eget quam. Praesent lacinia ornare eleifend. Ut ultrices ultricies suscipit. Duis eget molestie dolor. In laoreet sollicitudin nulla, at pellentesque tortor congue sed. Vivamus elementum non arcu nec vehicula. Donec elit metus, bibendum vel arcu eget, viverra vehicula magna. Nunc eu nisi leo. Praesent a imperdiet elit. Aenean pellentesque metus nunc, quis dapibus massa sollicitudin aliquet. Cras fermentum vehicula lectus in euismod. Ut aliquet, diam in rutrum convallis, justo dolor imperdiet erat, in mollis justo purus nec diam. ',
-            'startDate' => '2017-01-01',
-            'endDate' => '2018-06-01',
-            'link' => 'https://project-un.fr',
+            This project is realized by a team of six students.',
+            'startDate' => '2021-09-20',
+            'endDate' => '2021-10-01',
+            'link' => 'https://github.com/nibor51/scaling-journey',
         ],
         [
-            'title' => 'Project deux',
-            'description' => 'Aenean feugiat ultrices nisi, at tempus ipsum tempus id. Sed in luctus arcu. Mauris volutpat pellentesque lectus sit amet gravida. Integer tincidunt volutpat nisi, ac placerat tortor malesuada a. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent ut tempor erat, non faucibus orci. In nec leo malesuada, molestie neque at, interdum nisl. Morbi sit amet tempor turpis, blandit facilisis odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam id lorem erat.',
-            'startDate' => '2018-10-01',
-            'endDate' => '2020-06-01', 
-            'link' => 'https://project-deux.fr',
+            'title' => 'Baker Street Fighter',
+            'description' => 'On the occasion of our second project at the Wild Code School, we have the task of creating a web application that we have named Baker Street Fighter and which, as its name indicates, is a fighting game.
+
+            The application is composed of a front-end and a back-end. The front-end is made with HTML, CSS and JavaScript and the back-end is made with PHP and SQL.
+
+            This project is realized by a team of five students.',
+            'startDate' => '2021-10-01',
+            'endDate' => '2021-11-01', 
+            'link' => 'https://github.com/WildCodeSchool/reims-php-2109-project2-baker-street-fighter',
         ],
         [
             'title' => 'Project trois',
-            'description' => ' Aenean feugiat ultrices nisi, at tempus ipsum tempus id. Sed in luctus arcu. Mauris volutpat pellentesque lectus sit amet gravida. Integer tincidunt volutpat nisi, ac placerat tortor malesuada a. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent ut tempor erat, non faucibus orci. In nec leo malesuada, molestie neque at, interdum nisl. Morbi sit amet tempor turpis, blandit facilisis odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam id lorem erat.
-
-            Nullam viverra vestibulum urna, at tempor arcu porta ac. Ut eu augue eget lorem tincidunt malesuada commodo eu enim. Praesent ac consectetur sapien. Mauris tincidunt eget lectus nec volutpat. Nunc at lacus purus. Sed id risus non urna fermentum efficitur et congue ipsum. Nam vel dignissim enim. Maecenas tempus vestibulum libero nec interdum. Pellentesque lacinia et nunc at viverra. Suspendisse at purus urna. ',
-            'startDate' => '2021-02-01',
-            'endDate' => '2022-01-01',
-            'link' => 'https://project-trois.fr',
+            'description' => 'On the occasion of our third project at the Wild Code School, we have the task of creating a web application for a real client, the application is named Motorbox. Is a web application that follows the maintenance of a motorbike.
+            
+            The application is composed of a front-end and a back-end. The front-end is made with HTML, SCSS and JavaScript and the back-end is made with PHP Symfony and SQL.
+            
+            This project is realized by a team of five students.',
+            'startDate' => '2021-12-01',
+            'endDate' => '2022-02-01',
+            'link' => 'https://github.com/WildCodeSchool/reims-202109-php-project3-motorbox',
         ],
     ];
 
