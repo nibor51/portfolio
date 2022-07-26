@@ -22,6 +22,12 @@ class ImageWorkController extends AbstractController
         ]);
     }
 
+    #[Route('/api', name: 'image_work_api', methods: ['GET'])]
+    public function api(ImageWorkRepository $imageWorkRepository): Response
+    {
+        return $this->json($imageWorkRepository->findAll(), 200, [], ['groups' => 'image_work:read']);
+    }
+
     #[Route('/new', name: 'image_work_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
