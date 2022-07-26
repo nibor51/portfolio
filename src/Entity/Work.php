@@ -6,6 +6,7 @@ use App\Repository\WorkRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: WorkRepository::class)]
 class Work
@@ -16,24 +17,31 @@ class Work
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
+    #[Groups(['work:read', 'image_work:read'])]
     private $title;
 
     #[ORM\Column(type: 'text')]
+    #[Groups(['work:read'])]
     private $description;
 
     #[ORM\Column(type: 'date')]
+    #[Groups(['work:read'])]
     private $startDate;
 
     #[ORM\Column(type: 'date', nullable: true)]
+    #[Groups(['work:read'])]
     private $endDate;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    #[Groups(['work:read'])]
     private $link;
 
     #[ORM\ManyToMany(targetEntity: Tech::class)]
+    #[Groups(['work:read'])]
     private $usedTech;
 
     #[ORM\OneToMany(mappedBy: 'work', targetEntity: ImageWork::class, orphanRemoval: true)]
+    #[Groups(['work:read'])]
     private $images;
 
     public function __construct()
