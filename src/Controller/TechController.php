@@ -22,12 +22,6 @@ class TechController extends AbstractController
         ]);
     }
 
-    #[Route('/api', name: 'tech_api', methods: ['GET'])]
-    public function api(TechRepository $techRepository): Response
-    {
-        return $this->json($techRepository->findAll(), 200, [], ['groups' => 'tech:read']);
-    }
-
     #[Route('/new', name: 'tech_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {

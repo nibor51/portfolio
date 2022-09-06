@@ -22,12 +22,6 @@ class WorkController extends AbstractController
         ]);
     }
 
-    #[Route('/api', name: 'work_api', methods: ['GET'])]
-    public function api(WorkRepository $workRepository): Response
-    {
-        return $this->json($workRepository->findAll(), 200, [], ['groups' => 'work:read']);
-    }
-
     #[Route('/new', name: 'work_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
